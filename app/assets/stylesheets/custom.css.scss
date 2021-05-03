@@ -1,1 +1,10 @@
 @import "semantic-ui";
+
+.icon.circular.special {
+  content: url('favicon.ico');
+  padding: 0em !important;
+}
+
+.chatbox {
+  height: 500px;
+}
