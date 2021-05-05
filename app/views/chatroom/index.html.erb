@@ -9,34 +9,13 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui large feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Elliot Fu</em>: Yo!  What's up
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Stevie Feliciano</em>: Not much.  You?
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Helen Troy</em>: Test message
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Christian Rocha</em>: Testing
-              </div>
-            </div>
-          </div>
+          <% @users.each do |usr|%>
+            <% if usr.messages.any? %>
+              <% usr.messages.each do |msg| %>              
+                <em><%= usr.username %>:</em> <%= msg.body %><br>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       </div> 
       <div class="extra content">
