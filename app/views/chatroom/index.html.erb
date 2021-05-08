@@ -7,27 +7,20 @@
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content">
-        <div class="ui large feed">
-          <% @users.each do |usr|%>
-            <% if usr.messages.any? %>
-              <% usr.messages.each do |msg| %>              
-                <em><%= usr.username %>:</em> <%= msg.body %><br>
-              <% end %>
-            <% end %>
-          <% end %>
+      <div class="content" id="messages">
+        <div class="ui large feed" id="message-container">
+          <%= render @messages %>
         </div>
       </div> 
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
           <div class="field">
             <div class="ui fluid icon button input">
-              <input type="text" placeholder="Enter message">
-              <i class="bordered inverted orange edit icon"></i> 
+              <%= f.text_field :body %>
+              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %> 
             </div>
           </div>
-          
-        </form>
+        <% end %>
       </div> 
     </div>
   </div>

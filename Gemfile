@@ -28,7 +28,7 @@ gem 'jquery-rails'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'will_paginate'
 #IF YOU USE THE CONSOLE EXTENSIVELY TO TEST USERS AND OTHER DB THINGS... THIS GEM IS USEFUL FOR DISPLAYING DATA IN CLEANER FASHION
 #gem 'hirb'
 
